@@ -14,6 +14,6 @@ The surprise: the short prompt plus the full policy document, cached, scored 4.8
 
 Token cost is a product decision, not an infra bill.
 
-Full write-up, charts and open code: [RAVI: blog link]
+Full write-up, charts and open code: https://rvshankar45-jpg.github.io/same-bot-cheaper/
 
 What is your team's cost per answer?

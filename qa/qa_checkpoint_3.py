@@ -189,9 +189,11 @@ dirn = [("v2 quality below v1", s.loc["v2_full", "mean_quality"] < s.loc["v1_nai
          < v1 - s.loc["plus_route", "total_cost_usd"], "barely mattered")]
 bad = [k for k, cond, phrase in dirn if not (cond and phrase in blog)]
 check("claims match the data's direction (weak/mixed results stated as such)", not bad, f"checked {len(dirn)} directional claims; mismatched={bad}")
-links = re.findall(r"https?://\S+", blog + li)
-check("no invented quotes, stats or sources", not links and '"' not in re.sub(r'"[^"]{0,60}"', "", blog),
-      f"external links={links} (only [RAVI] placeholders); all statistics come from this repo's results")
+OWN = ("https://github.com/rvshankar45-jpg/Laya-model-router", "https://rvshankar45-jpg.github.io/same-bot-cheaper/")
+links = [u.rstrip(").,") for u in re.findall(r"https?://\S+", blog + li)]
+foreign = [u for u in links if not u.startswith(OWN)]
+check("no invented quotes, stats or sources", not foreign and '"' not in re.sub(r'"[^"]{0,60}"', "", blog),
+      f"links={links} (only the author's own repo and post); all statistics come from this repo's results")
 deny = r"\b(amazon|walmart|ikea|paypal|klarna|visa|mastercard|fedex|ups|usps|dhl|google|meta|openai|microsoft|swiggy|zomato|blinkit|zepto)\b"
 hits = sorted({m.lower() for m in re.findall(deny, blog + li, flags=re.I)})
 ph = re.findall(r"\[RAVI:[^\]]*\]", blog + li)

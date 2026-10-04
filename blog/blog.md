@@ -6,7 +6,7 @@ Token cost is a product decision, not an infra bill. To see how much of it is wa
 
 The optimised build answered the same 140 questions for **$0.69 instead of $1.95**: 64% cheaper, with 66% fewer tokens. Average quality moved from 4.63 to 4.49 out of 5. What surprised me was where the savings came from, and what the most talked-about technique actually delivered.
 
-[RAVI: one line on why this matters to you as a product leader]
+Token cost is one of the biggest brakes on LLM adoption. Before accepting it as the price of AI, I wanted to see how much of it can be engineered away.
 
 ## Why teams ship the expensive version
 
@@ -100,6 +100,6 @@ The data is synthetic, and one AI wrote both test and training questions, which 
 
 ## Try it
 
-Code, data and every result: [RAVI: GitHub repo link]. Demo video: [RAVI: demo video link].
+Code, data and every result: [rvshankar45-jpg/Laya-model-router](https://github.com/rvshankar45-jpg/Laya-model-router).
 
 What's your team's cost per answer? If you don't know, that's the first number to find.
